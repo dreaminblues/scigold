@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Clouds } from './clouds';
 
 class App extends Component {
   render() {
@@ -14,7 +15,7 @@ class App extends Component {
           <label for='' className='input-label'>Search: </label>
           <input type='text' className='text-input' placeholder='Search...'></input>
 
-          <br/>
+          <br />
           <label for='' className='input-label'>Upload: </label>
           <input type='file' className='file-input'></input>
 

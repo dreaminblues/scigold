@@ -1,47 +1,26 @@
-.App {
+html,
+body {
   text-align: center;
   height: 100vh;
-  background-color: #050517;
-  
+  background-color: #f3f3f4;
+  color: #050517;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  margin-top: 5em;
 }
-
-.App-header {
-  background-color: #cf5c36;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  margin-bottom: 1em !important;
+  padding: 10px;
+  font-size: 16px;
 }
-
-input{
-  margin-top: 3em;
+.form-signin .form-control:focus {
+  z-index: 2;
 }
-
-.input-label{
-  color: white;
-}
-
-.inputs{
-  padding: 2em;
-  display: block;
-  text-align: center;
-  margin-top: 2em;
-  border: 1px solid #cf5c36;
-  border-radius: 5px;
-  width: 500px;
-  
-}
-
-.text-input{
-  /* border050517 */
-}
-
-.file-input{
-
-}
-
-

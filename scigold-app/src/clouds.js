@@ -5,7 +5,6 @@ import * as React from 'react';
 
 export class Clouds extends React.Component {
 
-
     render() {
         return (
             <div className='app-outer'>

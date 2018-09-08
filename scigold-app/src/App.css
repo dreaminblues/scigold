@@ -24,8 +24,6 @@ body {
 .form-signin .form-control:focus {
   z-index: 2;
 }
-<<<<<<< HEAD
-=======
 
 .file-input{
 
@@ -106,4 +104,3 @@ h1 {
  transform: translateX(-50%);
  text-align: center;
 }
->>>>>>> 7a8baa7501e53d53b551d3afd52edf8cd89c8f4a

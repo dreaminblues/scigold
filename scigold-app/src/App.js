@@ -1,14 +1,38 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import './App.css';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import {
+  Button, Navbar, Nav, NavItem, NavDropdown, MenuItem, ControlLabel, FormControl,
+  Form,
+  FormGroup,
+  InputGroup,
+  LoadingSpinner, Glyphicon, SearchIcon
+} from 'react-bootstrap';
+import { Clouds } from './clouds'
 
-class App extends Component {
+export default class App extends React.Component {
 
-  onClick = (event) =>{
-    event.preventDefault;
-    <Clouds />
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      keyword: '',
+      hidden: true,
+    };
   }
 
+  handleClouds = event => {
+    event.preventDefault();
+
+    this.setState({
+      hidden: true,
+    });
+  }
+
+  handleInputChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
 
   render() {
     return (
@@ -18,8 +42,8 @@ class App extends Component {
             <Navbar.Brand>
               <a href="#home">Alexandria</a>
             </Navbar.Brand>
-            </Navbar.Header>
-            <Nav>
+          </Navbar.Header>
+          <Nav>
             <NavItem eventKey={1} href="#">
               Discussion
             </NavItem>
@@ -32,23 +56,31 @@ class App extends Component {
             <NavItem eventKey={4} href="#">
               Profile
             </NavItem>
+            <NavItem eventKey={5} href="#">
+              Upload
+            </NavItem>
           </Nav>
-        </Navbar>;
-        
-        <form className="form-signin">
-          <input type="text" id="inputEmail" class="form-control" placeholder="Search..." autofocus></input>
+        </Navbar>
 
-          <div className="form-group">
-            <input type="file" className="form-control" id="exampleFormControlFile1"></input>
-          </div>
-
-          <button className="btn btn-lg btn-light btn-block mt-5" type="submit" onClick=''>Submit</button>
-
-        </form>
+        <div hidden={!this.state.hidden}>
+          <Form inline onSubmit={this.handleClouds.bind(this)}>
+            <FormGroup required controlId="Keword">
+              <FormControl type="text" value={this.state.keyword}
+                name="query" onChange={this.handleInputChange.bind(this)}
+                style={{ width: 400 }} />
+            </FormGroup>
+            <div><p /></div>
+            <InputGroup>
+              <Button bsStyle="primary" type="submit" aria-label="Search" title="Search">
+                <Glyphicon glyph="search" aria-hidden="true" /> Search
+              </Button>
+            </InputGroup>
+          </Form>
+        </div>
+        <div hidden={this.state.hidden}>
+          <Clouds keyword={this.state.keyword} />
+        </div>
       </div>
     );
-  }
+  };
 }
-
-
-export default App;

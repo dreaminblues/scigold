@@ -39,14 +39,6 @@ export class Clouds extends React.Component {
                         <div style={{ fontSize: 30 }}>Inuit Dance Theory</div>
                         <div style={{ fontStyle: 'italic' }}>Aerospace</div>
                         <div style={{ color: 'green' }}>Entertainment</div>
-                        <div className="tag-item-wrapper">
-                            <div>
-                                Hover Me Please!
-              </div>
-                            <div className="tag-item-tooltip">
-                                HOVERED!
-              </div>
-                        </div>
                         <div style={{ fontSize: 'small' }}>Physics</div>
                         <div style={{ fontSize: 'small' }}>Art Theory</div>
                         <div style={{ fontSize: 'small' }}>Italian</div>

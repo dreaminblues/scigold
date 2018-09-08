@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -7,12 +6,20 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Alexandria</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+        <div className="inputs">
+
+          <label for='' className='input-label'>Search: </label>
+          <input type='text' className='text-input' placeholder='Search...'></input>
+
+          <br/>
+          <label for='' className='input-label'>Upload: </label>
+          <input type='file' className='file-input'></input>
+
+        </div>
+
       </div>
     );
   }

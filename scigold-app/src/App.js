@@ -71,7 +71,6 @@ export default class App extends React.Component {
               <img src={logoSrc} style={{ width: '30%', position: 'absolute', top: '50%', left: '35%' }}></img>
             </div>
             <form className="form-inline">
-              {/* <label for="search-input">Search Alexandria</label> */}
               <input type="text" className="form-control" id="search-input" placeholder="Search Alexandria"></input>
               <div className="btn btn-inline">
                 <div onClick={this.handleClouds.bind(this)}>
@@ -83,7 +82,6 @@ export default class App extends React.Component {
 
           <Detail></Detail>
           <Cloud></Cloud>
-
 
         </div>
 

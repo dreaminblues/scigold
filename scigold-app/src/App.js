@@ -8,7 +8,6 @@ import Cloud from './clouds'
 import $ from 'jquery';
 import Detail from './detail';
 
-
 export default class App extends React.Component {
 
   constructor(props) {
@@ -40,10 +39,11 @@ export default class App extends React.Component {
       <Router>
         <div className="App text-center">
           <ul className="mt-2">
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a class="active" href="#home">Alexandria</a></li>
+            <li><a class="active" href="#home">Discussion</a></li>
+            <li><a href="#news">Workspace</a></li>
+            <li><a href="#contact">archives</a></li>
+            <li><a href="#about">Profile</a></li>
             <li>
               <form className="form-inline">
                 <input type="text" class="form-control"></input>
@@ -65,9 +65,9 @@ export default class App extends React.Component {
               <label for="inputEmail" class="sr-only">Search: </label>
               <input type="text" class="form-control"></input>
               <div className="btn btn-inline">
-                <Link to="/cloud" onClick={this.handleClouds.bind(this)}>
+                <div onClick={this.handleClouds.bind(this)}>
                   <Glyphicon glyph="search" />
-                </Link>
+                </div>
               </div>
             </form>
           </div>

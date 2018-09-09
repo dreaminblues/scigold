@@ -70,13 +70,13 @@ export default class Detail extends React.Component {
                     <img src="https://picsum.photos/200/201/?image=844" className="figure-img img-fluid rounded"></img>
                     <figcaption class="figure-caption" >
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat lacus eget arcu auctor rhoncus. Mauris laoreet, nulla id ultricies dictum, nisl sapien vehicula mi, eget convallis eros nisi non.
-                                </figcaption>
+                    </figcaption>
                 </figure>
                 <figure class="figure E">
                     <img src="https://picsum.photos/201/200/?image=976" className="figure-img img-fluid rounded"></img>
                     <figcaption class="figure-caption" >
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat lacus eget arcu auctor rhoncus. Mauris laoreet, nulla id ultricies dictum, nisl sapien vehicula mi, eget convallis eros nisi non.
-                                </figcaption>
+                    </figcaption>
                 </figure>
                 <figure class="figure F">
                     <img src="https://picsum.photos/200/202/?image=977" className="figure-img img-fluid rounded"></img>
@@ -88,19 +88,19 @@ export default class Detail extends React.Component {
                     <img src="https://picsum.photos/202/200/?image=958" className="figure-img img-fluid rounded"></img>
                     <figcaption class="figure-caption" >
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat lacus eget arcu auctor rhoncus. Mauris laoreet, nulla id ultricies dictum, nisl sapien vehicula mi, eget convallis eros nisi non.
-                                </figcaption>
+                    </figcaption>
                 </figure>
                 <figure class="figure H">
                     <img src={imageThree} width="200" height="200"></img>
                     <figcaption class="figure-caption" >
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat lacus eget arcu auctor rhoncus. Mauris laoreet, nulla id ultricies dictum, nisl sapien vehicula mi, eget convallis eros nisi non.
-                                </figcaption>
+                    </figcaption>
                 </figure>
                 <figure class="figure I">
                     <img src={imageTwo} width="200" height="200" className="figure-img img-fluid rounded"></img>
                     <figcaption class="figure-caption" >
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat lacus eget arcu auctor rhoncus. Mauris laoreet, nulla id ultricies dictum, nisl sapien vehicula mi, eget convallis eros nisi non.
-                                </figcaption>
+                    </figcaption>
                 </figure>
 
             </div>

@@ -39,7 +39,7 @@ export default class App extends React.Component {
       <Router>
         <div className="App text-center">
 
-          <ul className="mt-2">
+          <ul className="top-menu">
             <li><a href="/">Alexandria</a></li>
             <li><a href="/">Discussion</a></li>
             <li><a href="/">Workspace</a></li>

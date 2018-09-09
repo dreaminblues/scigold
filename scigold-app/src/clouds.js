@@ -95,34 +95,12 @@ const words = [
     'bonsai',
     'forest',
     'wood',
-    'eucalyptus',
-    'evergreen',
-    'deciduous',
-    'hornbeam',
-    'gum',
-    'leaf',
-    'conifer',
-    'puka',
-    'ribbonwood',
-    'rainforest',
-    'souari',
-    'grove',
-    'bonsai',
-    'forest',
-    'wood',
-    'eucalyptus',
-    'evergreen',
-    'deciduous',
-    'hornbeam',
-    'gum',
-    'leaf',
-    'conifer',
-    'puka',
-    'ribbonwood',
-    'rainforest',
-    'souari',
-    'grove',
-    'bonsai',
+    'binary',
+    'deforestation',
+    'environmental science',
+    'global warming',
+    'forest fires',
+    'redwood'
 ];
 
 
@@ -155,14 +133,40 @@ class Word extends React.Component {
 
     showDetail() {
         switch (this.props.word) {
+            case 'forest':
+                return 'Last Updated (Monday, August 31st) | Articles (346)';
+            break;
+            case 'wood':
+                return 'Last Updated (Monday, August 31st) | Articles (346)';
+            break;
+            case 'eucalyptus':
+                return 'Last Updated (Monday, August 31st) | Articles (346)';
+            break;
+            case 'evergreen':
+                return 'Last Updated (Monday, August 31st) | Articles (346)';
+            break;
+            case 'deciduous':
+                return 'Last Updated (Monday, August 31st) | Articles (346)';
+            break;
+            case 'hornbeam':
+                return 'Last Updated (Monday, August 31st) | Articles (346)';
+            break;
+            case 'gum':
+                return 'Last Updated (Monday, August 31st) | Articles (346)';
+            break;
+            case 'leaf' :
+                return 'Last Updated (Monday, August 31st) | Articles (346)';
+            break;
+
+
             default: return '';
         }
     }
 
     render() {
         return (
-            <div className="word" style={getWordStyle('#141616', leftRandomNumber(), topRandomNumber(), fontSizeRandomNumber())} onMouseEnter={this.showDetail.bind(this)} onClick={this.wordClicked.bind(this)}>{this.props.word}
-                <div className="detail">
+            <div className="word" style={getWordStyle(randomColor({luminosity : 'dark'}), leftRandomNumber(), topRandomNumber(), fontSizeRandomNumber())} onMouseEnter={this.showDetail.bind(this)} onClick={this.wordClicked.bind(this)}>{this.props.word}
+                <div className="detail" style={{fontSize : 'sm'}}>
                     {this.showDetail(this.props.word)}
                 </div>
             </div>

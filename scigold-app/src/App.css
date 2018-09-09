@@ -73,16 +73,19 @@ h1 {
   z-index: 5;
 }
 
-.word:hover .detail{
+.word:hover .detail {
+  color: white;
+  font-size: .8em;
+  font-family: sans-serif !important;
   display: block;
   margin-top: 1em;
-  max-width: 300px;
+  /* max-width: 300px; */
   font-family: serif;
 }
 
 .detail{
   display: none;
-  font-size: 1em;
+  /* font-size: 1em !important; */
 }
 
 .logo{
@@ -110,13 +113,16 @@ label{
   margin-right: 2em;
 }
 
+.top-menu{
+  background-image: linear-gradient(#121C23, #273037);
+  color: #f2faff;
+}
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
 }
 
 li {
@@ -127,13 +133,9 @@ li a {
   display: block;
   color: white;
   text-align: center;
+  margin-top: 1em;
   padding: 14px 16px;
   text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: #111;
 }
 
 .figure{
@@ -144,16 +146,6 @@ li a:hover {
   border-radius: 5px;
   font-size: .8em;
   margin: 0 auto;
-}
-
-.A{
-  grid-area: A;
-}
-.B{
-  grid-area: B;
-}
-.C{
-  grid-area: C;
 }
 
 .figure-caption{

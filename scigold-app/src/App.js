@@ -64,8 +64,11 @@ export default class App extends React.Component {
           <div className="search-container">
 
             <h1>
-              Access. Collaborate. Innovate.
+              Alexandria
             </h1>
+            <h4>
+              Access. Collaborate. Innovate.
+            </h4>
 
             <div className='logo'>
               <img src={logoSrc} style={{ width: '30%', position: 'absolute', top: '50%', left: '35%' }}></img>

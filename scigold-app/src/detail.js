@@ -71,7 +71,7 @@ export default class Detail extends React.Component {
                     <Row>
                         <Col lg={4} md={4} sm={4}>
                             <figure class="figure">
-                                <img src="https://picsum.photos/198/200/?image=1028" className="figure-img img-fluid rounded"></img>
+                                <img src="./one.jpg" className="figure-img img-fluid rounded"></img>
                                 <figcaption class="figure-caption D" />
                             </figure>
                         </Col>

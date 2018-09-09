@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { Modal, Grid, Row, Col, Button, OverlayTrigger } from 'react-bootstrap';
 import './App.css';
+import imageOne from "./one.jpg";
+import imageTwo from "./two.jpg";
+import imageThree from "./three.jpg";
 
 export default class Detail extends React.Component {
 
@@ -55,13 +58,13 @@ export default class Detail extends React.Component {
                         </Col>
                         <Col lg={4} md={4} sm={4}>
                             <figure class="figure" >
-                                <img src="https://picsum.photos/199/200/?image=803" className="figure-img img-fluid rounded"></img>
+                                <img src={imageTwo} width="200" height="200"></img>
                                 <figcaption class="figure-caption B" />
                             </figure>
                         </Col>
                         <Col lg={4} md={4} sm={4}>
                             <figure class="figure">
-                                <img src="https://picsum.photos/200/198/?image=798" className="figure-img img-fluid rounded"></img>
+                                <img src="https://picsum.photos/200/198/?image=803" className="figure-img img-fluid rounded"></img>
                                 <figcaption class="figure-caption C" />
                             </figure>
                         </Col>
@@ -71,7 +74,7 @@ export default class Detail extends React.Component {
                     <Row>
                         <Col lg={4} md={4} sm={4}>
                             <figure class="figure">
-                                <img src="https://picsum.photos/198/200/?image=1028" className="figure-img img-fluid rounded"></img>
+                                <img src={imageOne} width="200" height="200" />
                                 <figcaption class="figure-caption D" />
                             </figure>
                         </Col>
@@ -105,7 +108,7 @@ export default class Detail extends React.Component {
                         </Col>
                         <Col lg={4} md={4} sm={4}>
                             <figure class="figure">
-                                <img src="https://picsum.photos/200/200/?image=957" className="figure-img img-fluid rounded"></img>
+                                <img src={imageThree} width="200" height="200"></img>
                                 <figcaption class="figure-caption I" />
                             </figure>
                         </Col>

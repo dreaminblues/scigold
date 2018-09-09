@@ -29,11 +29,11 @@ export default class App extends React.Component {
     });
   }
 
-  handleInputChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  };
+  // handleInputChange = event => {
+  //   this.setState({
+  //     [event.target.name]: event.target.value
+  //   });
+  // };
 
   handleGlyphClick(event) {
     event.preventDefault();
@@ -44,49 +44,25 @@ export default class App extends React.Component {
     return (
       <Router>
         <div className="App text-center">
-          <Navbar>
-            <Navbar.Header>
-              <Navbar.Brand>
-                <a href="#home">Alexandria</a>
-              </Navbar.Brand>
-            </Navbar.Header>
-            <Nav className='navbar'>
-              <NavItem className='nav-item' eventKey={1} href="#">
-                Discussion
-            </NavItem>
-              <NavItem className='nav-item' eventKey={2} href="#">
-                Workspace
-            </NavItem>
-              <NavItem className='nav-item' eventKey={3} href="#">
-                Archives
-            </NavItem>
-              <NavItem className='nav-item' eventKey={4} href="#">
-                Profile
-            </NavItem>
-              <NavItem className='nav-item' eventKey={5} href="#">
-                Upload
-            </NavItem>
-              <NavItem>
-                <Form inline onSubmit={this.handleClouds.bind(this)}>
-                  <ButtonGroup required controlId="Keyword">
-                    <InputGroup>
-                      <FormControl
-                        type="text"
-                        value={this.state.keyword}
-                        name="query"
-                        onChange={this.handleInputChange.bind(this)}
-                        style={{ width: 400 }} />
-                        <InputGroup.Addon>
-                        <Link to="/cloud">
-                          <Glyphicon glyph="search" />
-                        </Link>
-                      </InputGroup.Addon>
-                    </InputGroup>
-                  </ButtonGroup>
-                </Form>
-              </NavItem>
-            </Nav>
-          </Navbar>
+          <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li>
+              <Form inline onSubmit={this.handleClouds.bind(this)}>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control"></input>
+                  <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">
+                    <Link to="/cloud">
+                        <Glyphicon glyph="search" />
+                      </Link></span>
+                  </div>
+                </div>
+              </Form>
+            </li>
+          </ul>
           <Route exact path="/cloud" component={Cloud} />
         </div>
       </Router>

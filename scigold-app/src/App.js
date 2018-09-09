@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Cloud from './clouds'
 import $ from 'jquery';
 import Detail from './detail';
+import logoSrc from "./logo.png";
 
 export default class App extends React.Component {
 
@@ -23,10 +24,9 @@ export default class App extends React.Component {
     event.preventDefault();
 
     $('.search-container').hide();
-    $('.cloud').show();
-
-    this.setState({
-      hidden: true,
+    $('.logo').hide();
+    $('.app-outer').css({
+      display: 'block',
     });
   }
 
@@ -39,11 +39,11 @@ export default class App extends React.Component {
       <Router>
         <div className="App text-center">
           <ul className="mt-2">
-            <li><a class="active" href="#home">Alexandria</a></li>
-            <li><a class="active" href="#home">Discussion</a></li>
-            <li><a href="#news">Workspace</a></li>
-            <li><a href="#contact">archives</a></li>
-            <li><a href="#about">Profile</a></li>
+            <li><a href="/">Alexandria</a></li>
+            <li><a href="/">Discussion</a></li>
+            <li><a href="/">Workspace</a></li>
+            <li><a href="/">Archives</a></li>
+            <li><a href="/">Profile</a></li>
             <li>
               <form className="form-inline">
                 <input type="text" class="form-control"></input>
@@ -61,9 +61,12 @@ export default class App extends React.Component {
 
 
           <div className="search-container">
-            <form class="form-signin">
-              <label for="inputEmail" class="sr-only">Search: </label>
-              <input type="text" class="form-control"></input>
+            <div className='logo'>
+              <img src={logoSrc} style={{width : '30%', position: 'absolute', top : '50%', left: '35%'}}></img>
+            </div>
+            <form className="form-inline">
+              <label for="search-input">Search: </label>
+              <input type="text" className="form-control" id="search-input"></input>
               <div className="btn btn-inline">
                 <div onClick={this.handleClouds.bind(this)}>
                   <Glyphicon glyph="search" />
@@ -72,7 +75,10 @@ export default class App extends React.Component {
             </form>
           </div>
 
+
           <Detail></Detail>
+          <Cloud></Cloud>
+
 
         </div>
 

@@ -118,7 +118,9 @@ class Word extends React.Component {
 
     wordClicked() {
         $('.word').hide();
-        $('.figure').show();
+        $('.detail-container').css({
+            display: 'grid',
+        });
     }
 
     showDetail() {

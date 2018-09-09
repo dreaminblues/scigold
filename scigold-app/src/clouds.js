@@ -29,7 +29,7 @@ function topRandomNumber() {
 
         var num = rn(opts);
 
-        tooClose = checkIfTooClose(num, top_nums, 10);
+        tooClose = checkIfTooClose(num, top_nums, 1);
     }
 
     left_nums.push(num);
@@ -43,14 +43,14 @@ function leftRandomNumber() {
 
     while (tooClose) {
         var opts = {
-            min: 10,
+            min: 400,
             max: 1000,
             integer: true
         };
 
         var num = rn(opts);
 
-        tooClose = checkIfTooClose(num, left_nums, 130);
+        tooClose = checkIfTooClose(num, left_nums, 1);
         tooClose = false;
     }
 
@@ -78,22 +78,21 @@ function checkIfTooClose(num, array, range) {
 }
 
 const words = [
-    'Nutrition',
-    'Philosophy',
-    'Biology',
-    'Agriculture',
-    'Horology',
-    'Astronomy',
-    'Inuit Dance Theory',
-    'Tree',
-    'Aerospace',
-    'Entertainment',
-    'Physics',
-    'Art Theory',
-    'Italian',
-    'Aztec',
-    'Anthropology',
-    'History of Adriatic ca. 800 B.C.',
+    'forest',
+    'wood',
+    'eucalptus',
+    'evergreen',
+    'deciduous',
+    'hornbeam',
+    'gum',
+    'leaf',
+    'conifer',
+    'puka',
+    'ribbonwood',
+    'rainforest',
+    'souari',
+    'grove',
+    'bonsai',
 ];
 
 

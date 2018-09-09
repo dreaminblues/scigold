@@ -1,52 +1,160 @@
-import TagCloud from 'react-tag-cloud';
 import randomColor from 'randomcolor';
-import CloudItem from './cloud-item';
 import * as React from 'react';
+import rn from 'random-number';
+import $ from 'jquery';
 
-export class Clouds extends React.Component {
+var left_nums = [];
+var top_nums = [];
 
+function fontSizeRandomNumber() {
+    var opts = {
+        min: 12,
+        max: 30,
+        integer: true
+    };
+
+    return rn(opts);
+}
+
+function topRandomNumber() {
+
+    var tooClose = true;
+
+    while (tooClose) {
+        var opts = {
+            min: 70,
+            max: 680,
+            integer: true
+        };
+
+        var num = rn(opts);
+
+        tooClose = checkIfTooClose(num, top_nums, 10);
+    }
+
+    left_nums.push(num);
+
+    return num;
+}
+
+function leftRandomNumber() {
+
+    var tooClose = true;
+
+    while (tooClose) {
+        var opts = {
+            min: 10,
+            max: 1300,
+            integer: true
+        };
+
+        var num = rn(opts);
+
+        tooClose = checkIfTooClose(num, left_nums, 130);
+        tooClose = false;
+    }
+
+    top_nums.push(num);
+
+    return num;
+}
+
+function difference(a, b) {
+    return Math.abs(a - b);
+}
+
+function checkIfTooClose(num, array, range) {
+
+    var isTooClose = false;
+
+    for (let i = 0; i < array.length; i++) {
+        if (difference(num, array[i]) < range) {
+            isTooClose = true;
+            break;
+        }
+    }
+
+    return isTooClose;
+}
+
+const words = [
+    'Nutrition',
+    'Philosophy',
+    'Biology',
+    'Agriculture',
+    'Horology',
+    'Astronomy',
+    'Inuit Dance Theory',
+    'Aerospace',
+    'Entertainment',
+    'Physics',
+    'Art Theory',
+    'Italian',
+    'Aztec',
+    'Anthropology',
+    'History of Adriatic ca. 800 B.C.',
+];
+
+
+function getWordStyle(textColor, leftPosition, topPosition, fontSize) {
+    var style = {
+        color: String(textColor),
+        left: String(leftPosition) + 'px',
+        top: String(topPosition) + 'px',
+        fontSize: fontSize,
+        position: 'absolute',
+    }
+    return style;
+}
+
+class Word extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            keyword: ''
+        }
+    }
+
+    showDetail(){
+        switch(this.props.word){
+            case 'Horology' :
+                $('div').css({
+                    backgroundColor : 'blue'
+                })
+            break;
+        }
+    }
+
+    render() {
+        return (
+            <div className="word" style={getWordStyle('#141616', leftRandomNumber(), topRandomNumber(), fontSizeRandomNumber())} onMouseEnter={this.showDetail.bind(this)}>{this.props.word}</div>
+        );
+    }
+}
+
+const wordComponents = words.map((word) => {
+    return <Word word={word}></Word>
+}
+
+);
+
+export default class Cloud extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            keyword: '',
+            hidden: true,
+        };
+    }
 
     render() {
         return (
             <div className='app-outer'>
                 <div className='app-inner'>
-                    <h1>react-tag-cloud demo</h1>
-                    <TagCloud
-                        className='tag-cloud'
-                        style={{
-                            fontFamily: 'sans-serif',
-                            fontSize: () => Math.round(Math.random() * 50) + 16,
-                            color: () => randomColor({
-                                hue: 'blue'
-                            }),
-                            padding: 5,
-                        }}>
-                        <div
-                            style={{
-                                fontFamily: 'serif',
-                                fontSize: 40,
-                                fontStyle: 'italic',
-                                fontWeight: 'bold',
-                                color: randomColor()
-                            }}>Nutrition</div>
-                        <CloudItem text="Horticulture in Arid Climates" />
-                        <CloudItem text="Rainfall pattern in Antartica" />
-                        <div style={{ fontSize: 'large' }}>Philosophy</div>
-                        <div style={{ fontSize: 'large' }}>Biology</div>
-                        <div style={{ fontSize: 'large' }}>Agriculture</div>
-                        <div style={{ fontSize: 'large' }}>Horology</div>
-                        <div style={{ fontFamily: 'courier' }}>Astronomy</div>
-                        <div style={{ fontSize: 30 }}>Inuit Dance Theory</div>
-                        <div style={{ fontStyle: 'italic' }}>Aerospace</div>
-                        <div style={{ color: 'green' }}>Entertainment</div>
-                        <div style={{ fontSize: 'small' }}>Physics</div>
-                        <div style={{ fontSize: 'small' }}>Art Theory</div>
-                        <div style={{ fontSize: 'small' }}>Italian</div>
-                        <div style={{ fontSize: 'small' }}>Aztec</div>
-                        <div style={{ fontSize: 'small' }}>Anthropology</div>
-                        <div style={{ fontSize: 'small' }}>History of Adriatic ca. 800 B.C.</div>
-                        <div style={{ fontSize: 'small' }}>Comics And Anthology in Modern Entertainment</div>
-                    </TagCloud>
+                    {wordComponents}
                 </div>
             </div>
         );

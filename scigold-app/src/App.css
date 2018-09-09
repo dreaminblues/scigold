@@ -2,17 +2,14 @@ html,
 body {
   text-align: center;
   height: 100vh;
-  background-color: #f3f3f4;
-  color: #050517;
+  background-color: #f2faff;
+  color: #141616;
 }
 
-.form-signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
-  margin-top: 5em;
+.navbar{
+  min-height: 60px;
 }
+
 .form-signin .form-control {
   position: relative;
   box-sizing: border-box;
@@ -24,3 +21,51 @@ body {
 .form-signin .form-control:focus {
   z-index: 2;
 }
+h1 {
+ font-size: 3rem;
+ letter-spacing: 1px;
+ margin: 0;
+ padding: 0;
+ text-align: center;
+ opacity: 0.5;
+}
+
+.app-outer {
+ align-items: center; 
+ bottom: 0;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ left: 0;
+ padding: 20px 0;
+ position: absolute;
+ right: 0;
+ top: 0;
+ overflow: hidden;
+}
+
+.app-inner {
+  margin-top: 8em;
+ display: flex;
+ flex-direction: column;
+ height: 100%;
+ max-width: 100px;
+ width: 100%;
+}
+
+.word{
+  position: 'relative';
+  cursor: pointer;
+  transition: .5s;
+}
+
+.word:hover{
+  font-size: 30;
+  background-color: rgba(125, 141, 143, 0.685);
+  padding: 10px;
+  z-index: 5;
+}
+
+
+
+

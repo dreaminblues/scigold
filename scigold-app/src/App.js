@@ -1,54 +1,95 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import './App.css';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Clouds } from './clouds';
+import {
+  Navbar, Nav, NavItem, FormControl,
+  Form,
+  InputGroup,
+  Glyphicon, ButtonGroup
+} from 'react-bootstrap';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Cloud from './clouds'
 
-class App extends Component {
+
+export default class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      keyword: '',
+      hidden: true,
+    };
+  }
+
+  handleClouds = event => {
+    event.preventDefault();
+
+    this.setState({
+      hidden: true,
+    });
+  }
+
+  handleInputChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
+  handleGlyphClick(event) {
+    event.preventDefault();
+
+  }
 
   render() {
     return (
-      <div className="App text-center">
-        <Navbar>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#home">Alexandria</a>
-            </Navbar.Brand>
-          </Navbar.Header>
-          <Nav>
-            <NavItem eventKey={1} href="#">
-              Discussion
+      <Router>
+        <div className="App text-center">
+          <Navbar>
+            <Navbar.Header>
+              <Navbar.Brand>
+                <a href="#home">Alexandria</a>
+              </Navbar.Brand>
+            </Navbar.Header>
+            <Nav className='navbar'>
+              <NavItem className='nav-item' eventKey={1} href="#">
+                Discussion
             </NavItem>
-            <NavItem eventKey={2} href="#">
-              Workspace
+              <NavItem className='nav-item' eventKey={2} href="#">
+                Workspace
             </NavItem>
-            <NavItem eventKey={3} href="#">
-              Archives
+              <NavItem className='nav-item' eventKey={3} href="#">
+                Archives
             </NavItem>
-            <NavItem eventKey={4} href="#">
-              Profile
+              <NavItem className='nav-item' eventKey={4} href="#">
+                Profile
             </NavItem>
-          </Nav>
-        </Navbar>;
-
-        <form className="form-signin">
-          <input type="text" id="inputEmail" class="form-control" placeholder="Search..." autofocus></input>
-
-          <div className="form-group">
-            <input type="file" className="form-control" id="exampleFormControlFile1"></input>
-          </div>
-
-          <LinkContainer to='/cloud'>
-            <button className="btn btn-lg btn-light btn-block mt-5" type="submit">Submit</button>
-          </LinkContainer>
-
-        </form>
-      </div>
-
+              <NavItem className='nav-item' eventKey={5} href="#">
+                Upload
+            </NavItem>
+              <NavItem>
+                <Form inline onSubmit={this.handleClouds.bind(this)}>
+                  <ButtonGroup required controlId="Keyword">
+                    <InputGroup>
+                      <FormControl
+                        type="text"
+                        value={this.state.keyword}
+                        name="query"
+                        onChange={this.handleInputChange.bind(this)}
+                        style={{ width: 400 }} />
+                        <InputGroup.Addon>
+                        <Link to="/cloud">
+                          <Glyphicon glyph="search" />
+                        </Link>
+                      </InputGroup.Addon>
+                    </InputGroup>
+                  </ButtonGroup>
+                </Form>
+              </NavItem>
+            </Nav>
+          </Navbar>
+          <Route exact path="/cloud" component={Cloud} />
+        </div>
+      </Router>
     );
-  }
+  };
 }
-
-
-export default App;

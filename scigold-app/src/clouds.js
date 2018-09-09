@@ -44,7 +44,7 @@ function leftRandomNumber() {
     while (tooClose) {
         var opts = {
             min: 10,
-            max: 1300,
+            max: 1000,
             integer: true
         };
 
@@ -85,6 +85,7 @@ const words = [
     'Horology',
     'Astronomy',
     'Inuit Dance Theory',
+    'Tree',
     'Aerospace',
     'Entertainment',
     'Physics',
@@ -116,13 +117,13 @@ class Word extends React.Component {
         }
     }
 
-    wordClicked(){
+    wordClicked() {
         $('.word').hide();
         $('.figure').show();
     }
-    
-    showDetail(){
-        switch(this.props.word){
+
+    showDetail() {
+        switch (this.props.word) {
             // case 'Nutrition' :
             //     return 'Nutrition is the science that interprets the interaction of nutrients and other substances in food in relation to maintenance, growth, reproduction, health and disease of an organism. It includes food intake, absorption, assimilation, biosynthesis, catabolism, and excretion.';
             // break;
@@ -168,7 +169,7 @@ class Word extends React.Component {
             // case 'History of Adriatic ca. 800 B.C.' :
             //     return 'The Adriatic is the northernmost arm of the Mediterranean Sea, extending from the Strait of Otranto (where it connects to the Ionian Sea) to the northwest and the Po Valley. ... The Adriatic contains over 1,300 islands, mostly located along its eastern, Croatian coast.';
             // break;
-            default : return '';
+            default: return '';
         }
     }
 

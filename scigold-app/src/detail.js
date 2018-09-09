@@ -32,7 +32,7 @@ export default class Detail extends React.Component {
                             <div>
                                 <Button bsSize="sm" onClick={this.handleShow}>
                                     <figure class="figure">
-                                        <img src="https://picsum.photos/200/199/?random" className="figure-img img-fluid rounded"></img>
+                                        <img src="https://picsum.photos/200/199/?image=789" className="figure-img img-fluid rounded"></img>
                                         <figcaption class="figure-caption A" />
                                     </figure>
                                 </Button>
@@ -55,13 +55,13 @@ export default class Detail extends React.Component {
                         </Col>
                         <Col lg={4} md={4} sm={4}>
                             <figure class="figure" >
-                                <img src="https://picsum.photos/199/200/?random" className="figure-img img-fluid rounded"></img>
+                                <img src="https://picsum.photos/199/200/?image=803" className="figure-img img-fluid rounded"></img>
                                 <figcaption class="figure-caption B" />
                             </figure>
                         </Col>
                         <Col lg={4} md={4} sm={4}>
                             <figure class="figure">
-                                <img src="https://picsum.photos/200/198/?random" className="figure-img img-fluid rounded"></img>
+                                <img src="https://picsum.photos/200/198/?image=798" className="figure-img img-fluid rounded"></img>
                                 <figcaption class="figure-caption C" />
                             </figure>
                         </Col>
@@ -71,19 +71,19 @@ export default class Detail extends React.Component {
                     <Row>
                         <Col lg={4} md={4} sm={4}>
                             <figure class="figure">
-                                <img src="https://picsum.photos/198/200/?random" className="figure-img img-fluid rounded"></img>
+                                <img src="https://picsum.photos/198/200/?image=1028" className="figure-img img-fluid rounded"></img>
                                 <figcaption class="figure-caption D" />
                             </figure>
                         </Col>
                         <Col lg={4} md={4} sm={4}>
                             <figure class="figure">
-                                <img src="https://picsum.photos/200/201/?random" className="figure-img img-fluid rounded"></img>
+                                <img src="https://picsum.photos/200/201/?image=844" className="figure-img img-fluid rounded"></img>
                                 <figcaption class="figure-caption E" />
                             </figure>
                         </Col>
                         <Col lg={4} md={4} sm={4}>
                             <figure class="figure">
-                                <img src="https://picsum.photos/201/200/?random" className="figure-img img-fluid rounded"></img>
+                                <img src="https://picsum.photos/201/200/?image=976" className="figure-img img-fluid rounded"></img>
                                 <figcaption class="figure-caption F" />
                             </figure>
                         </Col>
@@ -93,19 +93,19 @@ export default class Detail extends React.Component {
                     <Row>
                         <Col lg={4} md={4} sm={4}>
                             <figure class="figure">
-                                <img src="https://picsum.photos/200/202/?random" className="figure-img img-fluid rounded"></img>
+                                <img src="https://picsum.photos/200/202/?image=977" className="figure-img img-fluid rounded"></img>
                                 <figcaption class="figure-caption G" />
                             </figure>
                         </Col>
                         <Col lg={4} md={4} sm={4}>
                             <figure class="figure">
-                                <img src="https://picsum.photos/202/200/?random" className="figure-img img-fluid rounded"></img>
+                                <img src="https://picsum.photos/202/200/?image=958" className="figure-img img-fluid rounded"></img>
                                 <figcaption class="figure-caption H" />
                             </figure>
                         </Col>
                         <Col lg={4} md={4} sm={4}>
                             <figure class="figure">
-                                <img src="https://picsum.photos/200/200/?random" className="figure-img img-fluid rounded"></img>
+                                <img src="https://picsum.photos/200/200/?image=957" className="figure-img img-fluid rounded"></img>
                                 <figcaption class="figure-caption I" />
                             </figure>
                         </Col>

@@ -38,6 +38,7 @@ export default class App extends React.Component {
     return (
       <Router>
         <div className="App text-center">
+
           <ul className="mt-2">
             <li><a href="/">Alexandria</a></li>
             <li><a href="/">Discussion</a></li>
@@ -61,12 +62,17 @@ export default class App extends React.Component {
 
 
           <div className="search-container">
+
+            <h1>
+              Access. Collaborate. Innovate.
+            </h1>
+
             <div className='logo'>
-              <img src={logoSrc} style={{width : '30%', position: 'absolute', top : '50%', left: '35%'}}></img>
+              <img src={logoSrc} style={{ width: '30%', position: 'absolute', top: '50%', left: '35%' }}></img>
             </div>
             <form className="form-inline">
-              <label for="search-input">Search: </label>
-              <input type="text" className="form-control" id="search-input"></input>
+              {/* <label for="search-input">Search Alexandria</label> */}
+              <input type="text" className="form-control" id="search-input" placeholder="Search Alexandria"></input>
               <div className="btn btn-inline">
                 <div onClick={this.handleClouds.bind(this)}>
                   <Glyphicon glyph="search" />
@@ -74,7 +80,6 @@ export default class App extends React.Component {
               </div>
             </form>
           </div>
-
 
           <Detail></Detail>
           <Cloud></Cloud>

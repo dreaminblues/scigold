@@ -4,6 +4,11 @@ import './App.css';
 import imageOne from "./one.jpg";
 import imageTwo from "./two.jpg";
 import imageThree from "./three.jpg";
+import $ from 'jquery';
+
+function showModal() {
+    
+}
 
 export default class Detail extends React.Component {
 
@@ -29,91 +34,78 @@ export default class Detail extends React.Component {
     render() {
         return (
             <div className="detail-container">
-                <Grid>
-                    <Row>
-                        <Col lg={4} md={4} sm={4}>
-                            <div>
-                                <Button bsSize="sm" onClick={this.handleShow}>
-                                    <figure class="figure">
-                                        <img src="https://picsum.photos/200/199/?image=789" className="figure-img img-fluid rounded"></img>
-                                        <figcaption class="figure-caption A" />
-                                    </figure>
-                                </Button>
-
-                                <Modal show={this.state.show} onHide={this.handleClose}>
-                                    <Modal.Header closeButton>
-                                        <Modal.Title>Information</Modal.Title>
-                                    </Modal.Header>
-                                    <Modal.Body>
-                                        <h4>More Information</h4>
-
-                                        <p>    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                                    </Modal.Body>
-                                    <Modal.Footer>
-                                        <Button onClick={this.handleClose}>Close</Button>
-                                    </Modal.Footer>
-                                </Modal>
+                <div class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-                        </Col>
-                        <Col lg={4} md={4} sm={4}>
-                            <figure class="figure" >
-                                <img src={imageTwo} width="200" height="200"></img>
-                                <figcaption class="figure-caption B" />
-                            </figure>
-                        </Col>
-                        <Col lg={4} md={4} sm={4}>
-                            <figure class="figure">
-                                <img src="https://picsum.photos/200/198/?image=803" className="figure-img img-fluid rounded"></img>
-                                <figcaption class="figure-caption C" />
-                            </figure>
-                        </Col>
-                    </Row>
-                    <div><p /></div>
-                    <div><br /></div>
-                    <Row>
-                        <Col lg={4} md={4} sm={4}>
-                            <figure class="figure">
-                                <img src={imageOne} width="200" height="200" />
-                                <figcaption class="figure-caption D" />
-                            </figure>
-                        </Col>
-                        <Col lg={4} md={4} sm={4}>
-                            <figure class="figure">
-                                <img src="https://picsum.photos/200/201/?image=844" className="figure-img img-fluid rounded"></img>
-                                <figcaption class="figure-caption E" />
-                            </figure>
-                        </Col>
-                        <Col lg={4} md={4} sm={4}>
-                            <figure class="figure">
-                                <img src="https://picsum.photos/201/200/?image=976" className="figure-img img-fluid rounded"></img>
-                                <figcaption class="figure-caption F" />
-                            </figure>
-                        </Col>
-                    </Row>
-                    <div><p /></div>
-                    <div><br /></div>
-                    <Row>
-                        <Col lg={4} md={4} sm={4}>
-                            <figure class="figure">
-                                <img src="https://picsum.photos/200/202/?image=977" className="figure-img img-fluid rounded"></img>
-                                <figcaption class="figure-caption G" />
-                            </figure>
-                        </Col>
-                        <Col lg={4} md={4} sm={4}>
-                            <figure class="figure">
-                                <img src="https://picsum.photos/202/200/?image=958" className="figure-img img-fluid rounded"></img>
-                                <figcaption class="figure-caption H" />
-                            </figure>
-                        </Col>
-                        <Col lg={4} md={4} sm={4}>
-                            <figure class="figure">
-                                <img src={imageThree} width="200" height="200"></img>
-                                <figcaption class="figure-caption I" />
-                            </figure>
-                        </Col>
-                    </Row>
-                </Grid>
+                            <div class="modal-body">
+                                <p>Modal body text goes here.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <figure class="figure">
+                    <img src="https://picsum.photos/200/199/?image=789" className="figure-img img-fluid rounded"></img>
+                    <figcaption class="figure-caption A" />
+                </figure>
+                <figure class="figure" onClick={showModal()}>
+                    <img src={imageTwo} width="200" height="200" className="figure-img img-fluid rounded"></img>
+                    <figcaption class="figure-caption" >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat lacus eget arcu auctor rhoncus. Mauris laoreet, nulla id ultricies dictum, nisl sapien vehicula mi, eget convallis eros nisi non.
+                                </figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="https://picsum.photos/200/198/?image=803" className="figure-img img-fluid rounded"></img>
+                    <figcaption class="figure-caption" >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat lacus eget arcu auctor rhoncus. Mauris laoreet, nulla id ultricies dictum, nisl sapien vehicula mi, eget convallis eros nisi non.
+                    </figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src={imageOne} width="200" height="200" alt=""/>
+                    <figcaption class="figure-caption" >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat lacus eget arcu auctor rhoncus. Mauris laoreet, nulla id ultricies dictum, nisl sapien vehicula mi, eget convallis eros nisi non.
+                    </figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="https://picsum.photos/200/201/?image=844" className="figure-img img-fluid rounded"></img>
+                    <figcaption class="figure-caption" >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat lacus eget arcu auctor rhoncus. Mauris laoreet, nulla id ultricies dictum, nisl sapien vehicula mi, eget convallis eros nisi non.
+                                </figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="https://picsum.photos/201/200/?image=976" className="figure-img img-fluid rounded"></img>
+                    <figcaption class="figure-caption" >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat lacus eget arcu auctor rhoncus. Mauris laoreet, nulla id ultricies dictum, nisl sapien vehicula mi, eget convallis eros nisi non.
+                                </figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="https://picsum.photos/200/202/?image=977" className="figure-img img-fluid rounded"></img>
+                    <figcaption class="figure-caption" >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat lacus eget arcu auctor rhoncus. Mauris laoreet, nulla id ultricies dictum, nisl sapien vehicula mi, eget convallis eros nisi non.
+                                </figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="https://picsum.photos/202/200/?image=958" className="figure-img img-fluid rounded"></img>
+                    <figcaption class="figure-caption" >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat lacus eget arcu auctor rhoncus. Mauris laoreet, nulla id ultricies dictum, nisl sapien vehicula mi, eget convallis eros nisi non.
+                                </figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src={imageThree} width="200" height="200"></img>
+                    <figcaption class="figure-caption" >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat lacus eget arcu auctor rhoncus. Mauris laoreet, nulla id ultricies dictum, nisl sapien vehicula mi, eget convallis eros nisi non.
+                                </figcaption>
+                </figure>
+
             </div>
         );
     }

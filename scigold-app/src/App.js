@@ -1,13 +1,12 @@
 import * as React from 'react';
 import './App.css';
 import {
-  Navbar, Nav, NavItem, FormControl,
-  Form,
-  InputGroup,
-  Glyphicon, ButtonGroup
+  Glyphicon
 } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Cloud from './clouds'
+import $ from 'jquery';
+import Detail from './detail';
 
 
 export default class App extends React.Component {
@@ -24,47 +23,59 @@ export default class App extends React.Component {
   handleClouds = event => {
     event.preventDefault();
 
+    $('.search-container').hide();
+    $('.cloud').show();
+
     this.setState({
       hidden: true,
     });
   }
 
-  // handleInputChange = event => {
-  //   this.setState({
-  //     [event.target.name]: event.target.value
-  //   });
-  // };
-
   handleGlyphClick(event) {
     event.preventDefault();
-
   }
 
   render() {
     return (
       <Router>
         <div className="App text-center">
-          <ul>
+          <ul className="mt-2">
             <li><a class="active" href="#home">Home</a></li>
             <li><a href="#news">News</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#about">About</a></li>
             <li>
-              <Form inline onSubmit={this.handleClouds.bind(this)}>
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control"></input>
-                  <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2">
-                    <Link to="/cloud">
-                        <Glyphicon glyph="search" />
-                      </Link></span>
-                  </div>
+              <form className="form-inline">
+                <input type="text" class="form-control"></input>
+                <div className="btn btn-inline">
+                  <Link to="/cloud">
+                    <Glyphicon glyph="search" />
+                  </Link>
                 </div>
-              </Form>
+              </form>
             </li>
           </ul>
+
+
           <Route exact path="/cloud" component={Cloud} />
+
+
+          <div className="search-container">
+            <form class="form-signin">
+              <label for="inputEmail" class="sr-only">Search: </label>
+              <input type="text" class="form-control"></input>
+              <div className="btn btn-inline">
+                <Link to="/cloud" onClick={this.handleClouds.bind(this)}>
+                  <Glyphicon glyph="search" />
+                </Link>
+              </div>
+            </form>
+          </div>
+
+          <Detail></Detail>
+
         </div>
+
       </Router>
     );
   };
